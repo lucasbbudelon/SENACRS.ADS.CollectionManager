@@ -1,7 +1,9 @@
-# [Collection Manager - Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas]
+#Collection Manager
 
++ **Instituição de Ensino:** Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
 + **Unidade Curricular:** Sistemas Distribuídos
 + **Professora:** Eduarda Rodrigues Monteiro
++ **Semestre:** 2018/1 - Noite
 + **Aluno:** Lucas Bednarek Budelon
 
 **Descrição do Trabalho:** Este trabalho tem como objetivo desenvolver um protocolo de comunicação visando o desenvolvimento de um sistema distribuído para realizar troca de figurinhas de um álbum. 
