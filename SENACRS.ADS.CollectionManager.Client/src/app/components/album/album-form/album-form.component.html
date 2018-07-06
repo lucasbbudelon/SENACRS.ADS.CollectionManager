@@ -1,0 +1,104 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            {{album.collection.name}} - {{album.totalItems}}/{{album.items.length}}
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">file_copy</i>
+                        </div>
+                        <p class="card-category">Únicos</p>
+                        <h3 class="card-title">{{album.singleItems.length}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of album.singleItems">
+                                <span class="number-item">{{item.number}}</span>
+                                <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">file_copy</i>
+                        </div>
+                        <p class="card-category">Repedido</p>
+                        <h3 class="card-title">{{album.repeatItems.length}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of album.repeatItems">
+                                <span class="number-item">{{item.number}}</span>
+                                <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">file_copy</i>
+                        </div>
+                        <p class="card-category">Faltantes</p>
+                        <h3 class="card-title">{{album.missingItems.length}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of album.missingItems">
+                                <span class="number-item">{{item.number}}</span>
+                                <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">star</i>
+                        </div>
+                        <p class="card-category">Raros</p>
+                        <h3 class="card-title">{{album.rareItems.length}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of album.rareItems">
+                                <span class="number-item">{{item.number}}</span>
+                                <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="card card-stats">
+                    <div class="card-header card-header-primary card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">trending_up</i>
+                        </div>
+                        <p class="card-category">Progresso</p>
+                        <h3 class="card-title">{{album.totalItems}}/{{album.items.length}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let item of album.items">
+                                <span class="number-item">{{item.number}}</span>
+                                <span class="badge badge-primary badge-pill">{{item.quantity}}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

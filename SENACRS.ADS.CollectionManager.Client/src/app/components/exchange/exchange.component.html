@@ -1,0 +1,118 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Albums</h4>
+                        <p class="card-category">Informações das coleções atuais</p>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-primary">
+                                <th>Nome</th>
+                                <th>Únicos</th>
+                                <th>Repetidos</th>
+                                <th>Faltantes</th>
+                                <th>Raros</th>
+                                <th>Progresso</th>
+                                <th>Trocas</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let album of albums">
+                                    <td>{{album.collection.name}}</td>
+                                    <td>{{album.singleItems.length}}</td>
+                                    <td>{{album.repeatItems.length}}</td>
+                                    <td>{{album.missingItems.length}}</td>
+                                    <td>{{album.rareItems.length}}</td>
+                                    <td>{{album.totalItems}}/{{album.items.length}}</td>
+                                    <td>
+                                        <button mat-raised-button type="button" class="btn btn-primary" (click)="match(album.id)">
+                                            Grupo
+                                        </button>
+                                        <button mat-raised-button type="button" class="btn btn-primary" (click)="matchByProximity(album.id, 5)">
+                                            5 km
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <img class="img" src="{{userProfile?.image}}" />
+                    </div>
+                    <div class="card-body">
+                        <!-- <h6 class="card-category text-gray">{{userProfile?.name}}</h6> -->
+                        <h4 class="card-title">{{userProfile?.name}}</h4>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="card-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!--*ngIf="matchItems.lenght"> -->
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Trocas</h4>
+                        <p class="card-category">Informações dos itens</p>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-primary">
+                                <th>Usuário</th>
+                                <th>Item</th>
+                                <th>Ações</th>
+                            </thead>
+                            <tbody>
+                                <tr id="{{matchItem.collectionItem.id}}" *ngFor="let matchItem of matchItems">
+                                    <td>{{matchItem.userProfileNeed?.name}}</td>
+                                    <td>{{matchItem.collectionItem.number}}</td>
+                                    <td>
+                                        <button mat-raised-button type="button" class="btn btn-primary pull-right" (click)="exchange(matchItem)">
+                                            Trocar
+                                        </button>
+                                        <button mat-raised-button type="button" class="btn btn-primary pull-right" (click)="openChat(matchItem.userProfileNeed)">
+                                            Conversar
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- *ngIf="userProfileChat != null" -->
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Chat</h4>
+                        <p class="card-category">Conversa entre {{userProfile?.name}} e {{userProfileChat?.name}}</p>
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let message of messages">
+                            <img class="img" src="{{message.from?.image}}" width="30px" />
+                            <span data-notify="message">{{message.content}}</span>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <mat-form-field class="example-full-width">
+                            <textarea #message autofocus matInput placeholder="Mensagem" [(ngModel)]="messageContent" (keyup.enter)="sendMessageChat(message.value)"></textarea>
+                        </mat-form-field>
+                        <button mat-raised-button type="button" class="btn btn-primary pull-right" (click)="sendMessage(message.value)">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

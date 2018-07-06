@@ -1,0 +1,24 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let album of albums">
+                <div class="card card-chart">
+                    <div class="card-header card-header-primary">
+                        <a [routerLink]="['/album', album.id]">
+                            <img src="{{album.collection.image}}" alt="{{album.collection.name}}" class="img" style="width:100%" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{album.collection.name}}</h4>
+                        <p class="card-category"> {{album.collection.company}} - {{album.collection.year}}</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> info
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

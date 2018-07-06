@@ -1,0 +1,54 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <h2>{{group?.name}}</h2>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Chat</h4>
+                        <p class="card-category">Conversa entre os menbros do grupo</p>
+                    </div>
+                    <div class="card-body">
+                        <div *ngFor="let message of messages">
+                            <img class="img" src="{{message.from?.image}}" width="30px" />
+                            <span data-notify="message">{{message.content}}</span>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="card-body">
+                            <mat-form-field class="example-full-width">
+                                <textarea #message autofocus matInput placeholder="Mensagem" [(ngModel)]="messageContent" (keyup.enter)="sendMessage(message.value)"></textarea>
+                            </mat-form-field>
+                            <button mat-raised-button type="button" class="btn btn-primary pull-right" (click)="sendMessage(message.value)">
+                                Enviar
+                            </button>
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title">Participantes</h4>
+                        <p class="card-category">Informações sobre o grupo</p>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-hover">
+                            <thead class="text-primary">
+                                <th>Login</th>
+                                <th>Nome</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let participant of group?.participants">
+                                    <td>{{participant.login}}</td>
+                                    <td>{{participant.name}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

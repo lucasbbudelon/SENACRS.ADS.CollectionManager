@@ -1,0 +1,11 @@
+ul.list-group{
+    width: 100%;
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+ul.list-group li{
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+}
+

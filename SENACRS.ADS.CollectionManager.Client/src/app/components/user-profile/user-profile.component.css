@@ -1,0 +1,16 @@
+.modal{
+    display: block; 
+    background-color: #EEEEEE;
+}
+
+button{
+    width: 100%;
+}
+
+/* .card-body img{
+    float: left;
+}
+
+.card-body span{
+    float: right;
+} */
