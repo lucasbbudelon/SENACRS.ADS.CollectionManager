@@ -1,15 +1,14 @@
 # Collection Manager
 
+**Descrição do Trabalho:** Este trabalho tem como objetivo desenvolver um protocolo de comunicação visando o desenvolvimento de um sistema distribuído para realizar troca de figurinhas de um álbum. 
+O trabalho visa aplicar os conceitos de comunicação e modelos de Sistemas Distribuídos. 
+Para isso, uma aplicação distribuída foi desenvolvida e documentada de maneira adequada, aplicando os conhecimentos adquiridos na disciplina e além.
+
 + **Instituição de Ensino:** Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
 + **Unidade Curricular:** Sistemas Distribuídos
 + **Professora:** Eduarda Rodrigues Monteiro
 + **Semestre:** 2018/1 - Noite
 + **Aluno:** Lucas Bednarek Budelon
-
-**Descrição do Trabalho:** Este trabalho tem como objetivo desenvolver um protocolo de comunicação visando o desenvolvimento de um sistema distribuído para realizar troca de figurinhas de um álbum. 
-O trabalho visa aplicar os conceitos de comunicação e modelos de Sistemas Distribuídos. 
-Para isso, uma aplicação distribuída foi desenvolvida e documentada de maneira adequada, aplicando os conhecimentos adquiridos na disciplina e além.
-
 
 ## Problema
 Em coleções de figurinhas, é comum termos muitos itens repetidos. 
